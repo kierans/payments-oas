@@ -1,0 +1,30 @@
+{
+  "name": "payments-oas",
+  "private": true,
+  "version": "0.0.1",
+  "description": "API definition to facilitate payments",
+  "main": "src/payments-api.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kierans/payments-oas.git"
+  },
+  "keywords": [
+    "payments"
+  ],
+  "author": "Kieran Simpson <kierans777@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/kierans/payments-oas/issues"
+  },
+  "homepage": "https://github.com/kierans/payments-oas#readme",
+  "devDependencies": {
+    "@redocly/cli": "^1.0.0-beta.127",
+    "make-dir-cli": "^3.0.0",
+    "openapi-types": "^12.1.3",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1"
+  }
+}
