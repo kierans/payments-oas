@@ -1,5 +1,6 @@
 import { OpenAPIV3_1 } from "openapi-types";
 import ReferenceObject = OpenAPIV3_1.ReferenceObject;
+import SecurityRequirementObject = OpenAPIV3_1.SecurityRequirementObject;
 
 export function documentReference(location: string): ReferenceObject {
 	return {
@@ -21,6 +22,12 @@ export function responsesReference(location: string): ReferenceObject {
 
 export function schemaReference(id: string): ReferenceObject {
 	return componentReference(`schemas/${id}`);
+}
+
+export function securitySchemeReference(id: string, scopes: string[]): SecurityRequirementObject {
+	return {
+		[id]: scopes
+	}
 }
 
 /*
