@@ -1,6 +1,7 @@
 import { OpenAPIV3_1 } from "openapi-types";
 import InfoObject = OpenAPIV3_1.InfoObject;
 
+import responses from "./responses";
 import schemas from "./schemas";
 
 export const paymentsApi: () => OpenAPIV3_1.Document  = () => ({
@@ -24,7 +25,7 @@ export const paymentsApi: () => OpenAPIV3_1.Document  = () => ({
 
 	components: {
 		parameters: {},
-		responses: {},
+		responses: responses(),
 		securitySchemes: {},
 		schemas: schemas()
 	},
