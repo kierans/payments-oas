@@ -1,10 +1,10 @@
 import { NamedSchemas } from "../../types/oas";
 import accounts from "./accounts";
-import resourceIdentifier from "./common/resource-identifier";
+import common from "./common/";
 
 export default function schemas(): NamedSchemas {
 	return {
 		...accounts(),
-		"resource-identifier": resourceIdentifier()
+		...common(),
 	}
 }
