@@ -58,6 +58,7 @@ const addBankAccount: () => PathItemObject = () => ({
 				description: "Account added",
 				content: {}
 			},
+			"400": responsesReference("bad-request"),
 			"401": responsesReference("unauthorised")
 		}
 	}
