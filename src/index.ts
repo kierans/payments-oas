@@ -26,6 +26,10 @@ export const paymentsApi: () => OpenAPIV3_1.Document  = () => ({
 		{
 			name: "accounts",
 			"x-displayName": "Accounts"
+		},
+		{
+			name: "callbacks",
+			"x-displayName": "Callbacks"
 		}
 	],
 
@@ -34,6 +38,12 @@ export const paymentsApi: () => OpenAPIV3_1.Document  = () => ({
 			name: "Account Management",
 			tags: [
 				"accounts"
+			]
+		},
+		{
+			name: "Callbacks",
+			tags: [
+				"callbacks"
 			]
 		}
 	],
