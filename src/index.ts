@@ -3,6 +3,7 @@ import InfoObject = OpenAPIV3_1.InfoObject;
 
 import { multiline, readmarkdown } from "./lib";
 
+import parameters from "./parameters";
 import resources from "./resources";
 import responses from "./responses";
 import schemas from "./schemas";
@@ -45,7 +46,7 @@ export const paymentsApi: () => OpenAPIV3_1.Document  = () => ({
 	],
 
 	components: {
-		parameters: {},
+		parameters: parameters(),
 		responses: responses(),
 		securitySchemes: securitySchemes(),
 		schemas: schemas()
