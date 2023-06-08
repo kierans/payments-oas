@@ -30,6 +30,9 @@ export function securitySchemeReference(id: string, scopes: string[]): SecurityR
 	}
 }
 
+export const oidcBearerTokenSchemeReference = (scopes: string[]): SecurityRequirementObject =>
+	securitySchemeReference("oidc-bearer-token", scopes)
+
 /*
  * Trims excess whitespace
  */
