@@ -3,7 +3,7 @@
 OAS specification for the paymentsAPI
 
 The specification is currently published at
-- https://???.github.io/payments-api/payments-api.html
+- https://kierans.github.io/payments-oas/payments-api.html
 
 # Structure
 
