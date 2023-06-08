@@ -21,6 +21,22 @@ export const paymentsApi: () => OpenAPIV3_1.Document  = () => ({
 		description: multiline(readmarkdown("info.md"))
 	} as InfoObject,
 
+	tags: [
+		{
+			name: "accounts",
+			"x-displayName": "Accounts"
+		}
+	],
+
+	"x-tagGroups": [
+		{
+			name: "Account Management",
+			tags: [
+				"accounts"
+			]
+		}
+	],
+
 	servers: [
 		{
 			url: "https://localhost:3000",

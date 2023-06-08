@@ -13,6 +13,9 @@ const listAccounts: () => PathItemObject = () => ({
 		operationId: "listAccounts",
 		summary: "List Accounts",
 		description: "Get a list of accounts for the customer",
+		tags: [
+			"accounts"
+		],
 		security: [
 			oidcBearerTokenSchemeReference([ "accounts:list" ]),
 		],
@@ -35,6 +38,9 @@ const addBankAccount: () => PathItemObject = () => ({
 		operationId: "addBankAccount",
 		summary: "Add a bank account",
 		description: "Add a bank account for the customer",
+		tags: [
+			"accounts"
+		],
 		security: [
 			oidcBearerTokenSchemeReference([ "accounts:add" ]),
 		],
