@@ -1,3 +1,6 @@
+import * as fs from "fs";
+import * as path from "path";
+
 import { OpenAPIV3_1 } from "openapi-types";
 import ReferenceObject = OpenAPIV3_1.ReferenceObject;
 import SecurityRequirementObject = OpenAPIV3_1.SecurityRequirementObject;
@@ -32,6 +35,9 @@ export function securitySchemeReference(id: string, scopes: string[]): SecurityR
 
 export const oidcBearerTokenSchemeReference = (scopes: string[]): SecurityRequirementObject =>
 	securitySchemeReference("oidc-bearer-token", scopes)
+
+export const readmarkdown = (filename: string): string =>
+	fs.readFileSync(path.join(__dirname, filename), { encoding: "utf8" });
 
 /*
  * Trims excess whitespace
