@@ -1,6 +1,8 @@
 import { OpenAPIV3_1 } from "openapi-types";
 import InfoObject = OpenAPIV3_1.InfoObject;
 
+import { multiline, readmarkdown } from "./lib";
+
 import resources from "./resources";
 import responses from "./responses";
 import schemas from "./schemas";
@@ -15,7 +17,8 @@ export const paymentsApi: () => OpenAPIV3_1.Document  = () => ({
 		license: {
 			name: "UNLICENSED",
 			url: "https://example.com/license-url"
-		}
+		},
+		description: multiline(readmarkdown("info.md"))
 	} as InfoObject,
 
 	servers: [
