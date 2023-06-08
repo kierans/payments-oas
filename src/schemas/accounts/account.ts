@@ -21,6 +21,7 @@ export default (): SchemaObject => ({
 		accountNumber: {
 			type: "string"
 		},
+		status: schemaReference("account-status"),
 		institution: schemaReference("institution")
 	},
 	required: [
