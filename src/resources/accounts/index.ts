@@ -3,7 +3,7 @@ import PathsObject = OpenAPIV3_1.PathsObject;
 import PathItemObject = OpenAPIV3_1.PathItemObject;
 
 import {
-	oidcBearerTokenSchemeReference,
+	oidcBearerTokenSchemeReference, parameterReference,
 	responsesReference,
 	schemaReference
 } from "../../lib";
@@ -64,7 +64,34 @@ const addBankAccount: () => PathItemObject = () => ({
 	}
 })
 
+const modifyAccount: () => PathItemObject = () => ({
+	delete: {
+		operationId: "deleteAccount",
+		summary: "Delete Account",
+		description: "Delete an account for a customer",
+		tags: [
+			"accounts"
+		],
+		security: [
+			oidcBearerTokenSchemeReference([ "accounts:delete" ])
+		],
+		parameters: [
+			parameterReference("account-identifier")
+		],
+		responses: {
+			"204": {
+				description: "Account removed successfully",
+				content: {}
+			},
+			"401": responsesReference("unauthorised"),
+			"422": responsesReference("unprocessable"),
+			"500": responsesReference("internal-server")
+		}
+	}
+})
+
 export default (): PathsObject => ({
+	"/account/{accountId}": modifyAccount(),
 	"/accounts": listAccounts(),
 	"/account/bank": addBankAccount()
 })
