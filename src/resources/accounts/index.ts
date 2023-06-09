@@ -28,7 +28,8 @@ const listAccounts: () => PathItemObject = () => ({
 					}
 				}
 			},
-			"401": responsesReference("unauthorised")
+			"401": responsesReference("unauthorised"),
+			"500": responsesReference("internal-server")
 		}
 	}
 })
@@ -59,7 +60,8 @@ const addBankAccount: () => PathItemObject = () => ({
 				content: {}
 			},
 			"400": responsesReference("bad-request"),
-			"401": responsesReference("unauthorised")
+			"401": responsesReference("unauthorised"),
+			"500": responsesReference("internal-server")
 		}
 	}
 })
