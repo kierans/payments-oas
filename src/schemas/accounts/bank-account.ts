@@ -7,14 +7,20 @@ export default (): SchemaObject => ({
 	description: "The minimum details required to address a bank account",
 	properties: {
 		accountName: {
-			type: "string"
+			type: "string",
+			description: "The name of the account",
+			example: "Bruce Wayne"
 		},
 		bsb: {
 			type: "string",
-			pattern: "\d{3}-\d{3}"
+			description: "The BSB for the account",
+			pattern: "\d{3}-\d{3}",
+			example: "123-456"
 		},
 		accountNumber: {
-			type: "string"
+			type: "string",
+			description: "The account number",
+			example: "123456789"
 		}
 	},
 	required: [
