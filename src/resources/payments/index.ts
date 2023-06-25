@@ -28,10 +28,7 @@ const makePayment = (): PathItemObject => ({
 				description: "Payment completed",
 				content: {
 					"application/json": {
-						schema: {
-							type: "string",
-							default: "TODO"
-						}
+						schema: schemaReference("payment")
 					}
 				}
 			},
