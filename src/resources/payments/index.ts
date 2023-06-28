@@ -3,11 +3,11 @@ import PathsObject = OpenAPIV3_1.PathsObject;
 import PathItemObject = OpenAPIV3_1.PathItemObject;
 import { oidcBearerTokenSchemeReference, responsesReference, schemaReference } from "../../lib";
 
-const makePayment = (): PathItemObject => ({
+const transferMoney = (): PathItemObject => ({
 	post: {
-		operationId: "makePayment",
-		summary: "Make Payment",
-		description: "Make a payment to one or more parties",
+		operationId: "transferMoney",
+		summary: "Transfer Money",
+		description: "Transfer money to one or more parties",
 		tags: [
 			"payments"
 		],
@@ -19,7 +19,7 @@ const makePayment = (): PathItemObject => ({
 			required: true,
 			content: {
 				"application/json": {
-					schema: schemaReference("payment-request")
+					schema: schemaReference("transfer-request")
 				}
 			}
 		},
@@ -40,5 +40,5 @@ const makePayment = (): PathItemObject => ({
 })
 
 export default (): PathsObject => ({
-	"/payment": makePayment()
+	"/payments/transfer": transferMoney()
 });

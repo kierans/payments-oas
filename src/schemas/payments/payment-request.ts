@@ -19,24 +19,10 @@ export default (): SchemaObject => ({
 		source: {
 			...schemaReference("resource-identifier"),
 			description: "The ID of an account already known to the API"
-		},
-		disbursements: {
-			type: "array",
-			items: {
-				oneOf: [
-					{
-						allOf: [
-							schemaReference("bank-account"),
-							schemaReference("payment-request-details")
-						]
-					}
-				]
-			}
 		}
 	},
 	required: [
 		"totalAmount",
-		"source",
-		"disbursements"
+		"source"
 	]
 });
