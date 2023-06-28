@@ -71,6 +71,7 @@ const transferMoney = (): PathItemObject => ({
 			},
 			"400": responsesReference("bad-request"),
 			"401": responsesReference("unauthorised"),
+			"422": responsesReference("payment-failure"),
 			"500": responsesReference("internal-server")
 		}
 	}
