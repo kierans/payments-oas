@@ -12,10 +12,6 @@ export default (): SchemaObject => ({
 			...schemaReference("currency-value"),
 			description: "The total value of the payment"
 		},
-		description: {
-			type: "string",
-			description: "The reason for the payment"
-		},
 		source: {
 			...schemaReference("resource-identifier"),
 			description: "The ID of an account already known to the API"

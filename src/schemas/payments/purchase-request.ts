@@ -13,12 +13,17 @@ export default (): SchemaObject => ({
 						type: "object",
 						additionalProperties: false,
 						properties: {
+								reference: {
+									type: "string",
+									description: "Information about the purchase"
+								},
 								recipient: {
 									...schemaReference("resource-identifier"),
 									description: "The ID of a recipient already known to the API"
 								}
 						},
 						required: [
+							"reference",
 							"recipient"
 						]
 				}

@@ -13,6 +13,10 @@ export default (): SchemaObject => ({
 						type: "object",
 						additionalProperties: false,
 						properties: {
+								description: {
+									type: "string",
+									description: "A description of the transfer."
+								},
 								disbursements: {
 										type: "array",
 										items: {
