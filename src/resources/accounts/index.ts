@@ -86,7 +86,10 @@ const modifyAccount: () => PathItemObject = () => ({
 				content: {}
 			},
 			"401": responsesReference("unauthorised"),
-			"422": responsesReference("unprocessable"),
+			"404": {
+				...responsesReference("not-found"),
+				description: "If no account by the ID"
+			},
 			"500": responsesReference("internal-server")
 		}
 	}
