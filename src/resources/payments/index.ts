@@ -3,6 +3,43 @@ import PathsObject = OpenAPIV3_1.PathsObject;
 import PathItemObject = OpenAPIV3_1.PathItemObject;
 import { oidcBearerTokenSchemeReference, responsesReference, schemaReference } from "../../lib";
 
+const loadMoney = (): PathItemObject => ({
+	post: {
+		operationId: "loadMoney",
+		summary: "Load money",
+		description: "Load money from an account to use later",
+		tags: [
+			"payments"
+		],
+		security: [
+			oidcBearerTokenSchemeReference([ "accounts:credit" ]),
+		],
+		requestBody: {
+			description: "Details of the load",
+			required: true,
+			content: {
+				"application/json": {
+					schema: schemaReference("load-request")
+				}
+			}
+		},
+		responses: {
+			"200": {
+				description: "Payment completed",
+				content: {
+					"application/json": {
+						schema: schemaReference("payment")
+					}
+				}
+			},
+			"400": responsesReference("bad-request"),
+			"401": responsesReference("unauthorised"),
+			"422": responsesReference("payment-failure"),
+			"500": responsesReference("internal-server")
+		}
+	}
+})
+
 const purchase = (): PathItemObject => ({
 	post: {
 		operationId: "makePurchase",
@@ -78,6 +115,7 @@ const transferMoney = (): PathItemObject => ({
 })
 
 export default (): PathsObject => ({
+	"/payments/load": loadMoney(),
 	"/payments/purchase": purchase(),
 	"/payments/transfer": transferMoney()
 });
