@@ -4,6 +4,7 @@ import paymentRequest from "./payment-request";
 import paymentRequestDetails from "./payment-request-details";
 import paymentOutcome from "./payment-outcome";
 import payment from "./payment";
+import purchaseRequest from "./purchase-request";
 import transferRequest from "./transfer-request";
 
 export default (): NamedSchemas => ({
@@ -11,5 +12,6 @@ export default (): NamedSchemas => ({
 	"payment-outcome": paymentOutcome(),
 	"payment-request": paymentRequest(),
 	"payment-request-details": paymentRequestDetails(),
+	"purchase-request": purchaseRequest(),
 	"transfer-request": transferRequest()
 })
